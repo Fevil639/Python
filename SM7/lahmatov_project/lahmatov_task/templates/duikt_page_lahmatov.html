@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список авто</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #eee;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0077cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Список автомобілів</h1>
+
+    <a href="/install/" class="btn">🔄 Оновити авто</a>
+
+    <table>
+        <tr>
+            <th>Бренд</th>
+            <th>Назва</th>
+            <th>Модель</th>
+            <th>Ціна</th>
+        </tr>
+        {% for car in cars %}
+        <tr>
+            <td>{{ car.CAR_BRAND.BRAND_NAME }}</td>
+            <td>{{ car.CAR_NAME }}</td>
+            <td>{{ car.CAR_MODEL }}</td>
+            <td>${{ car.CAR_PRICE }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
